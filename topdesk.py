@@ -21,6 +21,7 @@ def connectViaLink() :
 
 def incidentTitle() :
     global incidentTitle
+    tools.waitLoadingPageByXPATH("/html/body/div[1]/div")
     incidentTitle = tools.driver.find_element_by_xpath("/html/body/div[1]/div/h1/div[2]").text
     # print("incidentTitle : " + incidentTitle)
     
