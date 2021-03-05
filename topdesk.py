@@ -26,7 +26,7 @@ def incidentTitle() :
     incidentTitle = tools.driver.find_element_by_xpath("/html/body/div[1]/div/h1/div[2]").text
     print("incidentTitle : " + incidentTitle)
     
-    global description_text
-    tools.waitLoadingPageByXPATH("/html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]")
-    description_text = tools.driver.find_element_by_xpath("/html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]").text.encode('utf-8').strip()
+    global description_text     # /html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]
+    tools.waitLoadingPageByXPATH("/html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]")
+    description_text = tools.driver.find_element_by_xpath("/html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]").text.encode('utf-8').strip()
     print("description_text : " + description_text)
