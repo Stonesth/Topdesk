@@ -35,6 +35,12 @@ def incidentTitle() :
     print("incidentTitle : " + incidentTitle)
     
     global description_text     # /html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]
-    tools.waitLoadingPageByXPATH("/html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]")
-    description_text = tools.driver.find_element_by_xpath("/html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]").text.encode('ascii', 'ignore')
+    
+    if (incidentNumber.startswith('I')) :
+        tools.waitLoadingPageByXPATH("/html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]")
+        description_text = tools.driver.find_element_by_xpath("/html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]").text.encode('ascii', 'ignore')
+    else :
+        tools.waitLoadingPageByXPATH("/html/body/div/div/div[3]/div[3]/div[3]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]")
+        description_text = tools.driver.find_element_by_xpath("/html/body/div/div/div[3]/div[3]/div[3]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]").text.encode('ascii', 'ignore')
+    
     print("description_text : " + description_text)
