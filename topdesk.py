@@ -18,7 +18,7 @@ incidentTitle = ""
 description_text = ""
 
 def connectViaLink() :
-    if (incidentNumber.startswith(I)) :
+    if (incidentNumber.startswith('I')) :
         tools.driver.get("https://nnbe.topdesk.net/tas/secure/incident?action=lookup&lookup=naam&lookupValue="+incidentNumber)
     else :
         tools.driver.get("https://nnbe.topdesk.net/tas/secure/newchange?action=lookup&lookup=number&lookupValue="+incidentNumber)
