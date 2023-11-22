@@ -32,16 +32,16 @@ def connectViaLink() :
 def incidentTitle() :
     global incidentTitle
     tools.waitLoadingPageByXPATH("/html/body/div[1]/div/h1/div[1]")
-    incidentTitle = tools.driver.find_element(By.XPATH, "/html/body/div[1]/div/h1/div[2]").text.encode('ascii', 'ignore')
+    incidentTitle = tools.driver.find_element(By.XPATH, "/html/body/div[1]/div/h1/div[2]").text.encode('ascii', 'ignore').decode()
     print("incidentTitle : " + incidentTitle)
     
     global description_text     # /html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[2]/div[2]
     
     if (incidentNumber.startswith('I')) :
         tools.waitLoadingPageByXPATH("/html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]")
-        description_text = tools.driver.find_element(By.XPATH, "/html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]").text.encode('ascii', 'ignore')
+        description_text = tools.driver.find_element(By.XPATH, "/html/body/div[1]/div/div[3]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]").text.encode('ascii', 'ignore').decode()
     else :
         tools.waitLoadingPageByXPATH("/html/body/div/div/div[3]/div[3]/div[3]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]")
-        description_text = tools.driver.find_element(By.XPATH, "/html/body/div/div/div[3]/div[3]/div[3]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]").text.encode('ascii', 'ignore')
+        description_text = tools.driver.find_element(By.XPATH, "/html/body/div/div/div[3]/div[3]/div[3]/div[2]/div[2]/div[2]/div/div/div[1]/div[2]").text.encode('ascii', 'ignore').decode()
     
     print("description_text : " + description_text)
